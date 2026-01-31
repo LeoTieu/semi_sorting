@@ -5,6 +5,9 @@ import os
 
 
 
+def sort_all(sorting_function : callable, full_list: list[list[int]]):
+    pass
+
 if __name__ == '__main__':
     SIZE = 100
     LIST_AMOUNT = 2**12
@@ -12,13 +15,8 @@ if __name__ == '__main__':
     random_lists = get_randomized_lists(SIZE, LIST_AMOUNT)
 
 
-    for inner_list in random_lists:
-        for _ in range(1):
-            bubble_sort_but_only_one_iteration(inner_list)
-    
-    temp_array = [0.0 for _ in range(SIZE)]
-    for index in range(SIZE):
-        for inner_list in random_lists:
-            temp_array[index] += (inner_list[index]/LIST_AMOUNT)
+    print(sort_all(bubble_sort_but_only_one_iteration, random_lists))
 
-    print(temp_array)
+
+    # print(sort_all(bubble_sort_but_only_one_iteration, random_lists))
+    # print("done")
