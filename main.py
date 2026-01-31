@@ -4,9 +4,8 @@ import os
 
 
 if __name__ == '__main__':
-    SIZE = 100
+    SIZE = 3
     LIST_AMOUNT = 2**12
-    INNER_LIST_SIZE = 100
     random_lists = get_randomized_lists(SIZE, LIST_AMOUNT)
 
 

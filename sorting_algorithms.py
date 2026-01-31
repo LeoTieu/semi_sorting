@@ -14,7 +14,7 @@ def bubble_sort_but_only_one_iteration(input_list: list):
         break
 
 
-def sort_all(sorting_function : callable, full_list: list[list[int]]):
+def sort_all(sorting_function : callable, full_list: list[list[int]]): # type: ignore
     """Sorts many lists and returns a chart of the average values."""
     inner_size = len(full_list[0])
     amount_of_lists = len(full_list)
@@ -26,5 +26,19 @@ def sort_all(sorting_function : callable, full_list: list[list[int]]):
         for index in range(inner_size):
             weighted_value = inner_list[index] / amount_of_lists
             time_chart_list[0][index] += weighted_value
+    
+    iteration = 1
+    while True:
+        _load_new_with_0(time_chart_list, inner_size)
+        for inner_list in full_list:
+            sorting_function(inner_list)
+            for index in range(inner_size):
+                weighted_value = inner_list[index] / amount_of_lists
+                time_chart_list[iteration][index] += weighted_value
+        
+        if iteration == 3:
+            return time_chart_list
+        else:
+            iteration += 1
     
     return time_chart_list
