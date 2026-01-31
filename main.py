@@ -1,12 +1,7 @@
 from list_generation import get_randomized_lists
-from sorting_algorithms import bubble_sort_but_only_one_iteration
+from sorting_algorithms import bubble_sort_but_only_one_iteration, sort_all
 import os
 
-
-
-
-def sort_all(sorting_function : callable, full_list: list[list[int]]):
-    pass
 
 if __name__ == '__main__':
     SIZE = 100
