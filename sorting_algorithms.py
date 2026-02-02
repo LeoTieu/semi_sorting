@@ -1,6 +1,11 @@
 from helpers.helper_functions import _load_new_with_0, is_monotonic
 
 
+def get_increased_number():
+    """"""
+
+
+
 def bubble_sort_but_only_one_iteration(input_list: list):
     n = len(input_list)
     
@@ -12,6 +17,11 @@ def bubble_sort_but_only_one_iteration(input_list: list):
                 input_list[j], input_list[j+1] = input_list[j+1], input_list[j]
                 swapped = True
         break
+
+
+def insertion_sort_one_iteration(input_list: list):
+    pass
+
 
 
 def sort_all(sorting_function : callable, full_list: list[list[int]]): # type: ignore
@@ -26,7 +36,10 @@ def sort_all(sorting_function : callable, full_list: list[list[int]]): # type: i
         for index in range(inner_size):
             weighted_value = inner_list[index] / amount_of_lists
             time_chart_list[0][index] += weighted_value
-    
+    for index in range(inner_size):
+            time_chart_list[0][index] = round(time_chart_list[0][index], 0)
+
+
     iteration = 1
     while True:
         _load_new_with_0(time_chart_list, inner_size)
