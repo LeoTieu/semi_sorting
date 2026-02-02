@@ -1,4 +1,4 @@
-from helpers.helper_functions import _load_new_with_0
+from helpers.helper_functions import _load_new_with_0, is_monotonic
 
 
 def bubble_sort_but_only_one_iteration(input_list: list):
@@ -36,9 +36,10 @@ def sort_all(sorting_function : callable, full_list: list[list[int]]): # type: i
                 weighted_value = inner_list[index] / amount_of_lists
                 time_chart_list[iteration][index] += weighted_value
         
-        if iteration == 3:
+        for index in range(inner_size):
+            time_chart_list[iteration][index] = round(time_chart_list[iteration][index], 0)
+
+        if is_monotonic(time_chart_list[iteration]):
             return time_chart_list
-        else:
-            iteration += 1
     
-    return time_chart_list
+        iteration += 1
